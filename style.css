@@ -1,0 +1,105 @@
+/* Reset some default styles */
+html, body, div, h2, canvas {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Create a container for the entire layout */
+.container {
+    display: flex;
+    background-color: #f0f0f0; /* Background color for the entire page */
+    height: 100vh;
+}
+
+/* Style the left container (canvas container) */
+.canvas-container {
+    flex: 1; /* Take up all available space in the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* Background color for the canvas container */
+    border-left: 3px solid #ccc; /* Add a border to separate canvas and parameters */
+    border-right: 3px solid #ccc; /* Add a border to separate canvas and parameters */
+}
+
+canvas {
+    border: 1px solid #000; /* Optional border for the canvas */
+}
+
+/* Style the right container (parameters container) */
+.parameters-container {
+    width: 300px; /* Adjust the width as needed */
+    background-color: #fff; /* Background color for the parameters container */
+    padding: 20px;
+}
+
+.parameters {
+    text-align: center;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Style sub-containers and sections */
+.sub-container {
+    margin-bottom: 20px;
+}
+
+.sub-section {
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.object {
+    padding: 5px 5px 5px 5px;
+    border: solid black 1px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+
+.part {
+    display: flex;
+    margin: 2px 0 2px 0;
+    justify-content: space-between;
+}
+
+label {
+    text-align: center;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+input {
+    width: 50px;
+}
+
+.dropzone {
+    box-sizing: border-box;
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+
+    background: rgba(1,1,1,0.1);
+    border: 3px dashed darkgray;
+}
+/* Hide the default file input */
+.file-input-hidden {
+    display: none;
+}
+
+/* Customize the button */
+.custom-button {
+    cursor: pointer;
+    display: inline-block;
+}

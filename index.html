@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
+    <script src="main.js"></script>
+    <script src="examples.js"></script>
+    <script src="shaders.js"></script>
+    <script src="utils.js"></script>
+    <script src="objects.js"></script>
+    <script src="documentManipulator.js"></script>
+    <script src="dragndrop.js"></script>
+    <script src="objects_data.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+
+<div id="dropzone" class="dropzone"></div>
+
+<div class="container">
+    <div class="parameters-container">
+        <div class="parameters">
+            <div class="sub-container">
+                <button style="width: 100px; height: 30px; font-size: 20px" id="example">Example</button>
+                <button style="width: 100px; height: 30px; font-size: 20px" id="animation">Animation</button>
+                <button style="width: 250px; height: 30px; font-size: 20px" id="random">Apply Random Textures</button>
+                <input type="file" id="fileInput" multiple style="display: none;">
+            </div>
+            <div class="sub-container">
+                <h2>Scene</h2>
+                <div class="sub-section">
+                    <label for="background_color">Background color:</label>
+                    <input type="color" id="background_color" value="#646464" style="width: 100px">
+                </div>
+            </div>
+            <div class="sub-container">
+                <h2>Camera</h2>
+                <div class="sub-section">
+                    <label for="fov">FOV:</label>
+                    <input type="number" id="fov" style="width: 60px" value="45">
+                    <div style="width: 20px"></div>
+                    <label for="projection_size">Size:</label>
+                    <input type="number" id="projection_size" style="width: 60px" value="10">
+                </div>
+                <div class="sub-section">
+                    <label for="near">Near:</label>
+                    <input type="number" id="near" style="width: 60px" value="0.1" step="0.1">
+                </div>
+                <div class="sub-section">
+                    <label for="far">Far:</label>
+                    <input type="number" id="far" style="width: 60px" value="1000" step="0.1">
+                </div>
+                <div class="sub-section">
+                    <label for="projection">Projection:</label>
+                    <select id="projection">
+                        <option value="perspective" selected="selected">Perspective</option>
+                        <option value="orthographic">Orthographic</option>
+                    </select>
+                </div>
+                <div class="sub-section">
+                    <label>Position:</label>
+                    <div>
+                        <input id="camera_positionX" type="number" step="0.01" value="0">
+                        <input id="camera_positionY" type="number" step="0.01" value="0">
+                        <input id="camera_positionZ" type="number" step="0.01" value="5">
+                    </div>
+                </div>
+                <div class="sub-section">
+                    <label>Look at:</label>
+                    <div>
+                        <input id="camera_lookatX" type="number" step="0.01" value="0">
+                        <input id="camera_lookatY" type="number" step="0.01" value="0">
+                        <input id="camera_lookatZ" type="number" step="0.01" value="0">
+                    </div>
+                </div>
+            </div>
+            <div class="sub-container">
+                <h2>Lights</h2>
+                <div class="sub-section">
+                    <label for="shading_type">Shading type:</label>
+                    <select id="shading_type">
+                        <option value="phong" selected="selected">Phong</option>
+                        <option value="gourand">Gourand</option>
+                    </select>
+                </div>
+                <div class="sub-container" id="lights_controller">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="canvas-container">
+        <canvas width="900" height="900" id="gl_canvas"></canvas>
+    </div>
+    <div class="parameters-container">
+        <div class="parameters">
+            <h2>Objects</h2>
+            <div class="sub-container" id="objects_controller" style="overflow-y: scroll; height:880px">
+                <button style="width: 75px" id="add_object">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
